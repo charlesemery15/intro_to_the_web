@@ -6,6 +6,8 @@ get '/' do
 end
 
 get '/cat' do
+  @name = %w(Onyx Cheddar Quentin).sample
+  # is the same as this ^["Onyx", "Cheddar", "Quentin", "Dr Kitty McKittenFace"].sample
   erb(:index)
 end
 
