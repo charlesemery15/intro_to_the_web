@@ -5,9 +5,15 @@ get '/' do
   'Hello'
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = %w(Onyx Cheddar Quentin).sample
   # is the same as this ^["Onyx", "Cheddar", "Quentin", "Dr Kitty McKittenFace"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
 
