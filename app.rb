@@ -6,12 +6,12 @@ get '/' do
 end
 
 get '/random-cat' do
-  @name = %w(Onyx Cheddar Quentin).sample
+  @name = %w[Onyx Cheddar Quentin Dr\ Kitty\ McKittenFace].sample
   # is the same as this ^["Onyx", "Cheddar", "Quentin", "Dr Kitty McKittenFace"].sample
   erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   erb(:index)
@@ -27,4 +27,8 @@ end
 
 get '/greatness' do
   'Have you required greatness?'
+end
+
+get '/form-cat' do
+  erb(:form_cat)
 end
